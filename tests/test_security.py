@@ -64,3 +64,13 @@ def test_nonce_uniqueness():
         nonce = dev._generate_nonce()
         assert nonce not in nonces, "Nonce reuse detected"
         nonces.add(nonce)
+
+# pytest tests/test_security.py -v  # Run
+# Expected Output:
+# collected 5 items
+
+# tests/test_security.py::test_mitm_protection PASSED
+# tests/test_security.py::test_replay_attack PASSED  
+# tests/test_security.py::test_key_derivation PASSED
+# tests/test_security.py::test_hmac_integrity PASSED
+# tests/test_security.py::test_nonce_uniqueness PASSED
